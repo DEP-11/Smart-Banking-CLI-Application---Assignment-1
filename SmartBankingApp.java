@@ -1,5 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.lang.String;
+import java.lang.*;
 
 public class SmartBankingApp{
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -15,7 +17,7 @@ public class SmartBankingApp{
         final String OPEN_ACCOUNT = "📂 Open New Account";
         final String DEPOSIT_MONEY = "💰 Deposit Money";
         final String WITHDRAW_MONEY = "🤑 Withdraw Money";
-        final String TRANFER_MONEY = "\u1F911 Transfer Money";
+        final String TRANFER_MONEY = "💸 Transfer Money";
         final String CHECK_BALANCE = "💵 Check Account Balance";
         final String DROP_ACCOUNT = "🚮 Drop Existing Account";
 
@@ -60,7 +62,7 @@ public class SmartBankingApp{
                         case 6: screen = DROP_ACCOUNT; break;
                         case 7: 
                         System.out.println(CLEAR);
-                        System.out.printf("%sHave a Nice Day%s",COLOR_BLUE_BOLD,RESET);
+                        System.out.printf("\n\n\t%sHave a Nice Day!👋%s\n\n\n",COLOR_BLUE_BOLD,RESET);
                         System.exit(0);
 
                         default: continue;
