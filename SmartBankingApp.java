@@ -141,7 +141,6 @@ public class SmartBankingApp{
                 case CHECK_BALANCE:
                 case DROP_ACCOUNT:
                 default:
-                    //System.out.println("");
                     System.exit(0);
 
             }
