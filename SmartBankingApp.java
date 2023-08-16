@@ -27,10 +27,8 @@ public class SmartBankingApp{
 
         String screen = DASHBOARD;
 
-        String[] customerIds = new String[0];
-        String[] customerNames = new String[0];
-        int[] accBalance = new int[0];
-
+        String[][] customers = new String[0][];
+        
 
         do{
             final String APP_TITLE = String.format("%s%s%s",COLOR_BLUE_BOLD, screen, RESET);
@@ -115,21 +113,15 @@ public class SmartBankingApp{
                     }
                 }while(!valid);
 
-                String[] newCustomerIds = new String[customerIds.length + 1];
-                String[] newCustomerNames = new String[customerNames.length + 1];
-                int[] newAccBalance = new int[accBalance.length+1];
-                for (int i = 0; i < customerIds.length; i++) {
-                    newCustomerIds[i] = customerIds[i];
-                    newCustomerNames[i] = customerNames[i];
-                    newAccBalance[i] = accBalance[i];
+                String[][] newCustomers = new String[customers.length + 1][3];
+                for (int i = 0; i < customers.length; i++) {
+                    newCustomers[i] = customers[i];
                 }
-                newCustomerIds[newCustomerIds.length - 1] = id;
-                newCustomerNames[newCustomerIds.length - 1] = name;
-                newAccBalance[newAccBalance.length-1] = depo;
-                customerIds = newCustomerIds;
-                customerNames = newCustomerNames;
-                accBalance = newAccBalance;
-
+                newCustomers[newCustomers.length - 1][0] = id;
+                newCustomers[newCustomers.length - 1][1] = name;
+                newCustomers[newCustomers.length-1][2] = Integer.toString(depo);
+                customers = newCustomers;
+               
                 System.out.println();
                 System.out.printf(SUCCESS_MSG, 
                 String.format("%s:%s account has been created successfully", id, name));
